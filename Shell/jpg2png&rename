@@ -1,0 +1,9 @@
+#!/bin/env bash
+mogrify -format png -- *.jpg
+rm -- *.jpg
+echo "Enter the image starting number 'i' to rename as bi.png: "
+read -r i
+for fi in *.png; do
+    mv "$fi" b"$i".png
+    i=$((i+1))
+done
